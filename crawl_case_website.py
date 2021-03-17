@@ -14,7 +14,6 @@ import base64
 from io import BytesIO
 st.title('查詢招標網團險案件')
 st.markdown('查詢尚未決標、團險案件')
-st.markdown('輸入查詢條件')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
