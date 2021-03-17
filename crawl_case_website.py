@@ -13,7 +13,6 @@ import streamlit as st
 import base64
 from io import BytesIO
 st.title('查詢招標網團險案件')
-st.markdown('查詢尚未決標、團險案件')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
@@ -160,11 +159,9 @@ def crawling():
     #print('匯出all_case_data.csv')
     end_date_list = df['截止日'].str.split('/')
     for n in end_date_list:
-        remain_days.append((datetime.datetime(int(n[0])+1911, \
-        int(n[1]),int(n[2]))- datetime.datetime.today()).days+1)
+        remain_days.append(max((datetime.datetime(int(n[0])+1911, \
+        int(n[1]),int(n[2]))- datetime.datetime.today()).days+1,0))
     df['剩餘天數'] = remain_days
-    df = df[df['剩餘天數']>0]
-    print('篩選標案剩餘天數，共'+str(len(df))+'筆資料')
     np_case_name = df['標案名稱'].str
     np_method = df['招標方式'].str
 
@@ -180,8 +177,6 @@ def crawling():
     #~np_method.contains('限制性') 
 
     df = df[condition]
-    df['標案時程'] = (df['標案公告次數'] == '01') | (df['剩餘天數'] >=7)
-    df['標案時程'] = df['標案時程'].map({True:'尚有時間', False:'即將截止'})
 
     print('篩選團險件標案，共'+str(len(df))+'筆資料')
 
