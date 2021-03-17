@@ -195,4 +195,4 @@ if start:
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
 except:
-    st.error('File not found.')
+    st.error('尚未執行')
