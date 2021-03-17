@@ -30,7 +30,24 @@ website = []
 查詢迄日 = st.text_input("查詢起日(110/01/01)或輸入N")
 
 
+def to_excel(df):
+    output = BytesIO()
+    writer = pd.ExcelWriter(output, engine='xlsxwriter')
+    df.to_excel(writer, sheet_name='Sheet1')
+    writer.save()
+    processed_data = output.getvalue()
+    return processed_data
 
+def get_table_download_link(df):
+    """Generates a link allowing the data in a given panda dataframe to be downloaded
+    in:  dataframe
+    out: href string
+    """
+    val = to_excel(df)
+    b64 = base64.b64encode(val)  # val looks like b'...'
+    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx">Download xlsx file</a>' 
+
+    
 
 def crawling():
     import requests , re , datetime ,time ,os
@@ -163,8 +180,13 @@ def crawling():
 
     #path = os.getcwd()
     #out_path = out_path = '/'.join(path.split('/')[:-1])
-    df.to_csv('upload_case_data.csv',encoding='utf_8_sig',index=False)
+    #df.to_csv('upload_case_data.csv',encoding='utf_8_sig',index=False)
     
 start = st.button("開始執行")
 if start:
     crawling()
+    
+try:
+    st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+except:
+    st.error('File not found.')
