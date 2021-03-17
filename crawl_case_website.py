@@ -197,5 +197,6 @@ if start:
 
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+    st.table(df)
 except:
     st.error('尚未執行')
