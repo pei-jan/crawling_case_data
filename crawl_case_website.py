@@ -187,7 +187,7 @@ def crawling():
 start = st.button("開始執行")
 if start:
     df = crawling()
-st.markdown(查詢起日)
+st.markdown(type(查詢起日))
 
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
