@@ -31,7 +31,8 @@ website = []
 查詢起日 = st.text_input("查詢起日(109/09/06)或輸入N (N代表公告日40天前)")
 查詢迄日 = st.text_input("查詢迄日(110/01/01)或輸入N (N代表今日)")
 
-
+d = st.date_input('test',datetime.date(2021, 1, 1))
+st.write('test is:', d)
 def to_excel(df):
     output = BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
