@@ -28,12 +28,14 @@ remain_days = []
 website = []
 關鍵字 = st.text_input("第一層關鍵字(ex:險)")
 是否等標期間 = st.text_input("是否等標期間(N / Y)(半形)")
-查詢起日 = st.text_input("查詢起日(109/09/06)或輸入N (N代表公告日40天前)")
-查詢迄日 = st.text_input("查詢迄日(110/01/01)或輸入N (N代表今日)")
+s = st.date_input('查詢起日',datetime.date(2021, 2, 1))
+查詢起日 = str(int(str(s)[:4])-1911)+'/'+str(s)[5:7]+'/'+str(s)[8:]
+d = st.date_input('查詢迄日',datetime.date(2021, 3, 1))
+查詢迄日 = str(int(str(d)[:4])-1911)+'/'+str(d)[5:7]+'/'+str(d)[8:]
 
-d = st.date_input('test',datetime.date(2021, 1, 1))
-st.write(d)
-st.write('test is:', str(int(str(d)[:4])-1911)+'/'+str(d)[5:7]+'/'+str(d)[8:])
+
+#st.write(d)
+#st.write('test is:', str(int(str(d)[:4])-1911)+'/'+str(d)[5:7]+'/'+str(d)[8:])
 def to_excel(df):
     output = BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
