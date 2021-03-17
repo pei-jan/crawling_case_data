@@ -28,8 +28,8 @@ remain_days = []
 website = []
 關鍵字 = st.text_input("第一層關鍵字")
 是否等標期間 = st.text_input("是否等標期間(N / Y)")
-查詢起日 = str(st.text_input("查詢起日(109/09/06)或輸入N"))
-查詢迄日 = str(st.text_input("查詢迄日(110/01/01)或輸入N"))
+查詢起日 = st.text_input("查詢起日(109/09/06)或輸入N")
+查詢迄日 = st.text_input("查詢迄日(110/01/01)或輸入N")
 
 
 def to_excel(df):
@@ -187,7 +187,7 @@ def crawling():
 start = st.button("開始執行")
 if start:
     df = crawling()
-
+st.markdown(查詢起日)
 
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
