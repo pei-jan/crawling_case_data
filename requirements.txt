@@ -3,3 +3,4 @@ requests
 datetime
 fake_useragent
 openpyxl
+xlrd
