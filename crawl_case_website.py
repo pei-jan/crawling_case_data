@@ -39,7 +39,7 @@ d = st.date_input('查詢迄日',datetime.date(2021, 3, 1))
 def to_excel(df):
     output = BytesIO()
     writer = pd.ExcelWriter(output, engine='xlsxwriter')
-    df.to_excel(writer, sheet_name='Sheet1')
+    df.to_excel(writer, sheet_name='Sheet1',index=False)
     writer.save()
     processed_data = output.getvalue()
     return processed_data
