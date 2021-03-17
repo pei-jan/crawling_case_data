@@ -31,10 +31,10 @@ website = []
 是否等標期間 = 'N'
 today = datetime.datetime.today()
 days = datetime.timedelta(days = 40)
-s = st.date_input('公告日起日',datetime.date((today-days).year,
+s = st.date_input('公告日起日(預設為40天前)',datetime.date((today-days).year,
                                        (today-days).month, (today-days).day))
 查詢起日 = str(int(str(s)[:4])-1911)+'/'+str(s)[5:7]+'/'+str(s)[8:]
-d = st.date_input('公告日迄日',datetime.date(today.year, today.month, today.day))
+d = st.date_input('公告日迄日(預設為今日)',datetime.date(today.year, today.month, today.day))
 查詢迄日 = str(int(str(d)[:4])-1911)+'/'+str(d)[5:7]+'/'+str(d)[8:]
 
 
