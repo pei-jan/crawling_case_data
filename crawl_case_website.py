@@ -26,7 +26,7 @@ end_date = []
 budget = []
 remain_days = []
 website = []
-關鍵字 = st.text_input("第一層關鍵字(ex:險)")
+關鍵字 = st.text_input("第一層關鍵字(ex:險)",value='險')
 是否等標期間 = st.text_input("是否等標期間(N / Y)(半形)")
 today = datetime.datetime.today()
 days = datetime.timedelta(days = 40)
