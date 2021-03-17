@@ -2,3 +2,4 @@ pandas
 requests
 datetime
 fake_useragent
+openpyxl
