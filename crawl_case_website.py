@@ -28,8 +28,8 @@ remain_days = []
 website = []
 關鍵字 = st.text_input("第一層關鍵字")
 是否等標期間 = st.text_input("是否等標期間(N / Y)")
-查詢起日 = st.text_input("查詢起日(109/09/06)或輸入N")
-查詢迄日 = st.text_input("查詢起日(110/01/01)或輸入N")
+查詢起日 = str(st.text_input("查詢起日(109/09/06)或輸入N"))
+查詢迄日 = str(st.text_input("查詢迄日(110/01/01)或輸入N"))
 
 
 def to_excel(df):
