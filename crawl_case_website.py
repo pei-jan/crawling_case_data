@@ -177,14 +177,14 @@ def crawling():
     #df = df.sort_values('剩餘天數')
     df = df.sort_values('公告日期',ascending=False)
     df.reset_index(drop = True,inplace = True)
-
+    return df
     #path = os.getcwd()
     #out_path = out_path = '/'.join(path.split('/')[:-1])
     #df.to_csv('upload_case_data.csv',encoding='utf_8_sig',index=False)
     
 start = st.button("開始執行")
 if start:
-    crawling()
+    df = crawling()
     
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
