@@ -47,7 +47,7 @@ def get_table_download_link(df):
     """
     val = to_excel(df)
     b64 = base64.b64encode(val)  # val looks like b'...'
-    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx">Download xlsx file</a>' 
+    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx">Download csv file</a>' 
 
     
 
@@ -187,8 +187,9 @@ def crawling():
 start = st.button("開始執行")
 if start:
     df = crawling()
-    
-try:
-    st.markdown(get_table_download_link(df), unsafe_allow_html=True)
-except:
-    st.error('File not found.')
+
+st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+#try:
+#    st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+#except:
+#    st.error('File not found.')
