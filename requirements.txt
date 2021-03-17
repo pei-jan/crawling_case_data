@@ -1,7 +1,4 @@
 pandas
-csv
 requests
-random
-re
 datetime
 fake_useragent
