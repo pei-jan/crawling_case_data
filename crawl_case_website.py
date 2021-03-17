@@ -10,6 +10,8 @@ from fake_useragent import UserAgent
 import pandas as pd
 import requests.packages.urllib3
 import streamlit as st
+import base64
+from io import BytesIO
 st.title('招標網爬蟲')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
