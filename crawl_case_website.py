@@ -32,6 +32,7 @@ website = []
 查詢迄日 = st.text_input("查詢迄日(110/01/01)或輸入N (N代表今日)")
 
 d = st.date_input('test',datetime.date(2021, 1, 1))
+st.write(d)
 st.write('test is:', str(int(str(d)[:4])-1911)+'/'+str(d)[5].zfill(2)+'/'+str(d)[7].zfill(2))
 def to_excel(df):
     output = BytesIO()
