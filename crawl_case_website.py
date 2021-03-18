@@ -13,7 +13,7 @@ import streamlit as st
 import base64
 from io import BytesIO
 st.title('招標網團險案件查詢')
-st.markdown('即時搜尋政府招標網，篩選團險案件')
+st.markdown('<strong>即時搜尋政府招標網，篩選團險案件')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
@@ -31,7 +31,7 @@ website = []
 關鍵字 = st.text_input("搜尋關鍵字(預設為：險)",value='險')
 st.markdown('篩選關鍵字具其一則顯示，可自行修改')
 st.markdown('如欲搜尋防汛，可將其中一項條件改為防汛，不需之條件輸入X)')
-關鍵字2_1 = st.text_input(f'<span style = "font-size:15px">"篩選關鍵字包含(1)"</span>',value='團體')
+關鍵字2_1 = st.text_input("篩選關鍵字包含(1)",value='團體')
 關鍵字2_2 = st.text_input("篩選關鍵字包含(2)",value='鄉民')
 關鍵字2_3 = st.text_input("篩選關鍵字包含(3)",value='區民')
 關鍵字2_4 = st.text_input("篩選關鍵字包含(4)",value='鎮民')
@@ -75,7 +75,7 @@ def get_table_download_link(df):
     """
     val = to_excel(df)
     b64 = base64.b64encode(val)  # val looks like b'...'
-    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx"><span style = "font-size:24px"> >>下載檔案<< </span></a>' 
+    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx"><span style = "font-size:24px"><strong> >>下載檔案<< </span></a>' 
 
     
 
