@@ -45,18 +45,6 @@ st.markdown('篩選關鍵字不含條件，具其一則不顯示')
 
 
 
-'''
-    condition = (np_case_name.contains('團體') | np_case_name.contains('鄉民') | \
-    np_case_name.contains('區民') | np_case_name.contains('鎮民') | \
-    np_case_name.contains('市民') | np_case_name.contains('義勇') | \
-    np_case_name.contains('義消') | np_case_name.contains('志工') | \
-    np_case_name.contains('守望相助')) & \
-    ~np_case_name.contains('開口合約') & \
-    ~np_case_name.contains('責任') #& \
-'''
-
-
-
 
 #是否等標期間 = st.text_input("是否等標期間(N / Y)(半形)",value='N')
 是否等標期間 = 'N'
