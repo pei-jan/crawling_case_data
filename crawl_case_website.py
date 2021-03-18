@@ -43,7 +43,7 @@ st.markdown('如欲搜尋防汛，可將其中一項條件改為防汛，不需�
 st.markdown('篩選關鍵字不含條件，具其一則不顯示')
 關鍵字2_10 = st.text_input("篩選關鍵字不包含(1)",value='開口合約')
 關鍵字2_11 = st.text_input("篩選關鍵字不包含(2)",value='責任')
-
+st.markdown(關鍵字2_1,關鍵字2_2)
 
 
 
@@ -207,7 +207,7 @@ def crawling():
     #path = os.getcwd()
     #out_path = out_path = '/'.join(path.split('/')[:-1])
     #df.to_csv('upload_case_data.csv',encoding='utf_8_sig',index=False)
-st.markdown(關鍵字2_1,關鍵字2_2)
+
 start = st.button("開始執行")
 if start:
     df = crawling()
