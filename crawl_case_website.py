@@ -75,7 +75,7 @@ def get_table_download_link(df):
     """
     val = to_excel(df)
     b64 = base64.b64encode(val)  # val looks like b'...'
-    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx"> >>下載檔案<< </a>' 
+    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx"><span style = "font-size:24px"> >>下載檔案<< </span></a>' 
 
     
 
