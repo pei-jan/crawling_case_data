@@ -13,7 +13,7 @@ import streamlit as st
 import base64
 from io import BytesIO
 st.title('招標網團險案件查詢')
-st.markdown(f'<strong>即時搜尋政府招標網，篩選團險案件</strong>')
+st.markdown(f'<span style = "font-size:24px"><strong>即時搜尋政府招標網，篩選團險案件</strong></span>')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
