@@ -31,7 +31,7 @@ website = []
 關鍵字 = st.text_input("搜尋關鍵字(預設為：險)",value='險')
 st.markdown(f'<p><span style = "font-size:24px"><strong>篩選關鍵字具其一則顯示，可自行修改</strong></span></p>',unsafe_allow_html=True)
 st.markdown(f'<p><span style = "font-size:24px"><strong>如欲搜尋防汛，可將其中一項條件改為防汛，不需之條件輸入X)</strong></span></p>',unsafe_allow_html=True)
-關鍵字2_1 = st.text_input(f'<p><span style = "font-size:24px"><strong>篩選關鍵字包含(1)</strong></span></p>',unsafe_allow_html=True,value='團體')
+關鍵字2_1 = st.text_input("篩選關鍵字包含(1)",value='團體')
 關鍵字2_2 = st.text_input("篩選關鍵字包含(2)",value='鄉民')
 關鍵字2_3 = st.text_input("篩選關鍵字包含(3)",value='區民')
 關鍵字2_4 = st.text_input("篩選關鍵字包含(4)",value='鎮民')
