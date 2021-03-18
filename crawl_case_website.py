@@ -28,7 +28,7 @@ budget = []
 remain_days = []
 website = []
 
-關鍵字 = st.text_input("搜尋關鍵字(ex:險)",value='險')
+關鍵字 = st.text_input("搜尋關鍵字(預設為：險)",value='險')
 st.markdown('篩選關鍵字具其一則顯示，可自行修改')
 st.markdown('如欲搜尋防汛，可將其中一項條件改為防汛，不需之條件輸入X)')
 關鍵字2_1 = st.text_input("篩選關鍵字包含(1)",value='團體')
@@ -215,5 +215,6 @@ if start:
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
     st.table(df)
+    st.markdown(關鍵字2_1,關鍵字2_2)
 except:
     st.error('尚未執行')
