@@ -215,6 +215,7 @@ if start:
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
     df2 = df.drop('標案網址',axis=1)
+    st.markdown(get_table_download_link(df))
     st.table(df2)
     
 except:
