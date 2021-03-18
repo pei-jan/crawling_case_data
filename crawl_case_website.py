@@ -207,7 +207,7 @@ def crawling():
     #path = os.getcwd()
     #out_path = out_path = '/'.join(path.split('/')[:-1])
     #df.to_csv('upload_case_data.csv',encoding='utf_8_sig',index=False)
-    
+st.markdown(關鍵字2_1,關鍵字2_2)
 start = st.button("開始執行")
 if start:
     df = crawling()
@@ -215,6 +215,6 @@ if start:
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
     st.table(df)
-    st.markdown(關鍵字2_1,關鍵字2_2)
+    
 except:
     st.error('尚未執行')
