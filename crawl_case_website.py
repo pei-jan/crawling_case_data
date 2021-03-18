@@ -13,7 +13,7 @@ import streamlit as st
 import base64
 from io import BytesIO
 st.title('招標網團險案件查詢')
-st.markdown('<strong>即時搜尋政府招標網，篩選團險案件')
+st.markdown(f'<strong>即時搜尋政府招標網，篩選團險案件</strong>')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
@@ -75,7 +75,7 @@ def get_table_download_link(df):
     """
     val = to_excel(df)
     b64 = base64.b64encode(val)  # val looks like b'...'
-    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx"><span style = "font-size:24px"><strong> >>下載檔案<< </span></a>' 
+    return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="case.xlsx"><span style = "font-size:24px"><strong> >>下載檔案<< </strong></span></a>' 
 
     
 
