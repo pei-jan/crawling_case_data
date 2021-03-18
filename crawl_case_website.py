@@ -12,7 +12,8 @@ import requests.packages.urllib3
 import streamlit as st
 import base64
 from io import BytesIO
-st.title('查詢招標網團險案件')
+st.title('招標網團險案件查詢')
+st.markdown('即時搜尋政府招標網，篩選團險案件')
 requests.packages.urllib3.disable_warnings()
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
