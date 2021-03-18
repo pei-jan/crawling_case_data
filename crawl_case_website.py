@@ -29,7 +29,7 @@ remain_days = []
 website = []
 
 關鍵字 = st.text_input("搜尋關鍵字(ex:險)",value='險')
-st.markdown('篩選關鍵字具其一則顯示，可自行修改(如欲搜尋防汛，可將其中一項條件改為防汛，不需之條件輸入X)')
+st.markdown('篩選關鍵字具其一則顯示，可自行修改\n(如欲搜尋防汛，可將其中一項條件改為防汛，不需之條件輸入X)')
 關鍵字2_1 = st.text_input("篩選關鍵字包含(1)",value='團體')
 關鍵字2_2 = st.text_input("篩選關鍵字包含(2)",value='鄉民')
 關鍵字2_3 = st.text_input("篩選關鍵字包含(3)",value='區民')
