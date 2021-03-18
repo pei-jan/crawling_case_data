@@ -214,7 +214,8 @@ if start:
 
 try:
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
-    st.table(df.drop('標案網址',axis=1,inplace=True))
+    df2 = df.drop('標案網址',axis=1)
+    st.table(df2)
     
 except:
     st.error('尚未執行')
